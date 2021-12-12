@@ -21,9 +21,10 @@ fn main() {
     let map_height = oct_map.len();
     let mut nines = Vec::new();
     let mut step = 0;
+    let mut all_flashes = HashSet::new();
     'outer: loop {
         nines.clear();
-        let mut all_flashes = HashSet::new();
+        all_flashes.clear();
         for (y, row) in oct_map.iter_mut().enumerate(){
             for x in 0..row.len(){
                 row[x] += 1;
