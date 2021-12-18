@@ -61,7 +61,7 @@ fn parse(bytes: &[u8], start: usize) -> (ParseResult, usize) {
             println!("Packet is literal");
             let mut literal: usize = 0;
             let mut group_start_index = start + 6;
-            while true {
+            loop {
                 let group_in = get_quintuplet(bytes, group_start_index) >> 3;
                 group_start_index += 5;
                 println!("group {:b}", group_in);
